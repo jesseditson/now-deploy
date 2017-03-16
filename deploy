@@ -2,17 +2,19 @@
 
 ENV=$1
 
-[[ -z "$1" ]] && echo "specify an environment" && exit 1
+[[ -z "$1" ]] && echo "ERROR: specify an environment" && exit 1
 
 FILE="now.${ENV}.json"
 
-[[ ! -f "$FILE" ]] && echo "$FILE not found" && exit 1
+[[ ! -f "$FILE" ]] && echo "ERROR: $FILE not found" && exit 1
 
 function cleanup {
-  rm -f $FILE
+  rm -f now.json
+  [[ -f "now.bak.json" ]] && mv now.bak.json now.json
 }
 trap cleanup EXIT
 
+[[ -f "now.json" ]] && mv now.json now.bak.json
 cp $FILE now.json
 
 now
