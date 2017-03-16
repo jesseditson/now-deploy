@@ -1,0 +1,25 @@
+{
+  "name": "now-deploy",
+  "version": "0.0.1",
+  "description": "A deploy script for use with now and multiple now.json files",
+  "bin": {
+    "now-deploy": "./deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesseditson/now-deploy.git"
+  },
+  "keywords": [
+    "now",
+    "now.json",
+    "environments",
+    "env",
+    "deploy"
+  ],
+  "author": "Jesse Ditson <jesse.ditson@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/jesseditson/now-deploy/issues"
+  },
+  "homepage": "https://github.com/jesseditson/now-deploy#readme"
+}

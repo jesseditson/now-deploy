@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+ENV=$1
+
+[[ -z "$1" ]] && echo "specify an environment" && exit 1
+
+FILE="now.${ENV}.json"
+
+[[ ! -f "$FILE" ]] && echo "$FILE not found" && exit 1
+
+function cleanup {
+  rm -f $FILE
+}
+trap cleanup EXIT
+
+cp $FILE now.json
+
+now
+now alias
