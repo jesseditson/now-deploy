@@ -1,6 +1,8 @@
 #!/bin/bash -e
 
 ENV=$1
+shift
+CMD=$@
 
 [[ -z "$1" ]] && echo "ERROR: specify an environment" && exit 1
 
@@ -17,5 +19,9 @@ trap cleanup EXIT
 [[ -f "now.json" ]] && mv now.json now.bak.json
 cp $FILE now.json
 
-now
-now alias
+if [[ -z "$2" ]]; then
+  now
+  now alias
+else
+  eval "now $CMD"
+fi
