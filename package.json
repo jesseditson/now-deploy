@@ -1,6 +1,6 @@
 {
   "name": "now-deploy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A deploy script for use with now and multiple now.json files",
   "bin": {
     "now-deploy": "./deploy"
