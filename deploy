@@ -4,7 +4,7 @@ ENV=$1
 shift
 CMD=$@
 
-[[ -z "$1" ]] && echo "ERROR: specify an environment" && exit 1
+[[ -z "$ENV" ]] && echo "ERROR: specify an environment" && exit 1
 
 FILE="now.${ENV}.json"
 
