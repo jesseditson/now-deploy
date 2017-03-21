@@ -20,8 +20,7 @@ trap cleanup EXIT
 cp $FILE now.json
 
 if [[ -z "$2" ]]; then
-  now
-  now alias
+  now && now alias
 else
   eval "now $CMD"
 fi
